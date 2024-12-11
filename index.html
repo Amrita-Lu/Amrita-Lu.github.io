@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="">
 
 <head>
     <meta http-equiv="refresh" content="17;url=https://amrita-lu.github.io/meteor/index.html">
@@ -13,7 +13,6 @@
             padding: 0;
             border: 0;
             font-size: 100%;
-            font: inherit;
             vertical-align: baseline;
             box-sizing: border-box;
             color: inherit;
@@ -75,16 +74,6 @@
             color: #81a2be;
         }
 
-        a.avatar {
-            position: fixed;
-            bottom: 15px;
-            right: -100px;
-            -webkit-animation: slide 0.5s 4.5s forwards;
-            animation: slide 0.5s 4.5s forwards;
-            display: block;
-            z-index: 4
-        }
-
         a.avatar img {
             border-radius: 100%;
             width: 44px;
@@ -130,7 +119,7 @@
     <div>
         <p> <span>[root@VM-0-9-centos ~]# </span>: "<i> cd /关于Amrita-Lu/ </i>"</p>
         <p> <span>[root@VM-0-9-centos ~]#</span>: "<i>加载成功</i>"</p>
-        <p> <span>[root@VM-0-9-centos ~]#</span>: <b>文件备份自动启用中...</span>: <a href="/">备份成功</a></p>
+        <p> <span>[root@VM-0-9-centos ~]#</span>: <span>文件备份自动启用中...</span>: <a href="/">备份成功</a></p>
         <p>
             <span>[root@VM-0-9-centos ~]# </span>:"<i>文件碎片正在加载...</i>"
         </p>
@@ -141,15 +130,15 @@
 
 
     <script>
-        var str = document.getElementsByTagName('div')[0].innerHTML.toString();
-        var i = 0;
+        const str = document.getElementsByTagName('div')[0].innerHTML.toString();
+        let i = 0;
         document.getElementsByTagName('div')[0].innerHTML = "";
 
         setTimeout(function () {
-            var se = setInterval(function () {
+            const se = setInterval(function () {
                 i++;
                 document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
-                if (i == str.length) {
+                if (i === str.length) {
                     clearInterval(se);
                     document.getElementsByTagName('div')[0].innerHTML = str;
                 }
